@@ -36,7 +36,7 @@ function App() {
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>
-            <input type='text' value{todo} onChange={(event) => editTodo(index, event.target.value)} />
+            <input type='text' value={todo} onChange={(event) => editTodo(index, event.target.value)} />
             {todo}
             <button onClick={() => removeTodo(index)}>Remove</button>
           </li>
@@ -47,4 +47,3 @@ function App() {
 }
 
 export default App;
-
