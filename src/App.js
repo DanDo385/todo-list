@@ -1,19 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    const storedTools = JSON.parse(localStorage.getItem('todos'));
-  }, []);
-  
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-    if (storedTodos.length > 0) {
-      
-    }
-  }, [todos]);
 
   function addTodo(text) {
     setTodos([...todos, text]);
@@ -43,6 +32,7 @@ function App() {
         <input type='text' name='todo' />
         <button type='submit'>Add Todo</button>
       </form>
+
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>
