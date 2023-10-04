@@ -5,7 +5,14 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
+    const storedTools = JSON.parse(localStorage.getItem('todos'));
+  }, []);
+  
+  useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
+    if (storedTodos.length > 0) {
+      
+    }
   }, [todos]);
 
   function addTodo(text) {
@@ -36,7 +43,6 @@ function App() {
         <input type='text' name='todo' />
         <button type='submit'>Add Todo</button>
       </form>
-
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>
